@@ -7,7 +7,7 @@ import AuthorQuiz from './AuthorQuiz';
 const authors = [
   {
   name: 'Mark Twain',
-  imageUrl: './public/images/authors/marktwain.jpg',
+  image: './authorquiz/public/images/authors/mark.jpg',
   imageSource: 'Wikipedia commons',
   books: ['The Adventures of Huckleberry-Finn']
 },
