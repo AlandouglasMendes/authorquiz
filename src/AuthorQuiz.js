@@ -12,6 +12,12 @@ function Hero (){
             <p>Select the book written by the author shown!</p>
           </div>);
 }
+function Book({title}){
+  return (<div className="answer">
+      <h4>{title}</h4>
+    </div>);
+}
+
 
 function Turn ({author, books}){
   return (<div className='row turn' style={{ background : 'white' }}>
@@ -19,7 +25,7 @@ function Turn ({author, books}){
       <img src={author.imageUrl} className="authorimage" alt="Author" />
     </div>
     <div className="col-6">
-      {books.map((title) => <p>{title}</p>)}
+      {books.map((title) => <Book title={title} key={title} />)}
     </div>
   </div>);  
 }
