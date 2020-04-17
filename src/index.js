@@ -42,12 +42,12 @@ function getTurnData(authors){
   const allBooks = authors.reduce(function (p, c, i){
     return p.concat(c.books);
   }, []);
-  const fourRandomBooks = shuffle(allBooks).slide(0, 4);
+  const fourRandomBooks = shuffle(allBooks).slice(0, 4);
   const answer = sample(fourRandomBooks);
 
   return {
     books: fourRandomBooks,
-    author: authors.find((autor) => 
+    author: authors.find((author) => 
     author.books.some((title) => 
     title === answer)),
   }
