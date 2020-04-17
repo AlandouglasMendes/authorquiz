@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import AuthorQuiz from './AuthorQuiz';
+import { shuffle, sample } from 'underscore';
 //import * as serviceWorker from './serviceWorker';
 
 const authors = [
@@ -37,11 +38,23 @@ const authors = [
 }
 ];
 
-const state = {
-  turnData: {
-    author: authors[0],
-    books: authors[0].books,
+function getTurnData(authors){
+  const allBooks = authors.reduce(function (p, c, i){
+    return p.concat(c.books);
+  }, []);
+  const fourRandomBooks = shuffle(allBooks).slide(0, 4);
+  const answer = sample(fourRandomBooks);
+
+  return {
+    books: fourRandomBooks,
+    author: authors.find((autor) => 
+    author.books.some((title) => 
+    title === answer)),
   }
+}
+
+const state = {
+  turnData: getTurnData(authors)
 }
 
 ReactDOM.render(<AuthorQuiz {...state} />, document.getElementById('root'));
