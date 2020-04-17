@@ -7,8 +7,8 @@ import './bootstrap.min.css';
 
 
 function Hero (){
-  return (<div className="jumbotron col-10 offset-1">
-            <h1>Author Quiz</h1>
+  return (<div className="jumbotron col-10 offset-1"  id='headTitle' >
+            <h4>Author Quiz</h4>
             <p>Select the book written by the author shown!</p>
           </div>);
 }
