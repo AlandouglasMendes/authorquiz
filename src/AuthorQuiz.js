@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './bootstrap.min.css';
-import ReactDOM from 'react-dom';
+import PropTypes from 'prop-types'
 
 
 
@@ -14,11 +14,11 @@ function Hero (){
           </div>);
 }
 
-function Book({title, onClick}){
-  return (<div className="answer" onClick={() => {onClick(title);}}>
-      <h4>{title}</h4>
-    </div>);
-}
+const Book = ({title, onClick}) => (
+  <div className="book" onClick={() => onClick(title)}>
+    <h4 className="book-title">{title}</h4>
+  </div>
+);
 
 
 function Turn ({author, books, highlight, onAnswerSelected}){
