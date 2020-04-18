@@ -49,7 +49,7 @@ function getTurnData(authors){
     books: fourRandomBooks,
     author: authors.find((author) => 
     author.books.some((title) => 
-    title === answer)),
+    title === answer))
   }
 }
 
