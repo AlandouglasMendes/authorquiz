@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
+import AddAuthorForm from './AddAuthorForm';
 import AuthorQuiz from './AuthorQuiz';
 import { shuffle, sample } from 'underscore';
 //import * as serviceWorker from './serviceWorker';
@@ -65,12 +66,7 @@ function onAnswerSelected(answer){
   render();
 }
 
-function AddAuthorForm({match}){
-  return <div>
-    <h1>Add Author</h1>
-      <p>{JSON.stringify(match)}</p>
-    </div>
-}
+
 
 function App(){
   return <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />;
