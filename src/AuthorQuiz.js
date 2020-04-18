@@ -30,7 +30,7 @@ function Turn ({author, books, highlight, onAnswerSelected}){
       'wrong': 'red'
     };
 
-    return mapping[highlight];
+    return mapping[highlight]; 
   }
   
   
@@ -54,7 +54,7 @@ function Footer(){
         </div>);
 }
 
-function AuthorQuiz({turnData, highlight}, onAnswerSelected) {
+function AuthorQuiz({turnData, highlight, onAnswerSelected}) {
   return (
     <div className="container-fluid" >
       <Hero />
