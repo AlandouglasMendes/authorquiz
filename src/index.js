@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+//import { BrowserRouter, Router } from 'react-router';
 import './index.css';
 import AuthorQuiz from './AuthorQuiz';
 import { shuffle, sample } from 'underscore';
@@ -63,8 +64,13 @@ function onAnswerSelected(answer){
   state.highlight = isCorrect ? 'correct' : 'wrong';
   render();
 }
+
+function App(){
+  return <AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />;
+}
+
 function render(){
-  ReactDOM.render(<AuthorQuiz {...state} onAnswerSelected={onAnswerSelected} />, document.getElementById('root'));
+  ReactDOM.render(<App />, document.getElementById('root'));
   
 }
 
